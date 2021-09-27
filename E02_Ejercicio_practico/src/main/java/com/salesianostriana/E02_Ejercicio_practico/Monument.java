@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 
 @Entity
 @Data
@@ -24,6 +25,10 @@ public class Monument {
     private String cityName;
     private String location;
     private String name;
+
+    //@Column(size:1000) --> Nos permite aumentar el tamaño de caracteres.
+    //@Column(columnDefinition = "TEXT")
+    @Lob //--> nos permitiría convertir el objeto inferior en un objeto grande
     private String description;
     private String photo;
 

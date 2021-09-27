@@ -17,71 +17,93 @@ public class MonumentController {
     private final MonumentRepository repository;
 
 
-    /*
-    -Listar monumentos
-    -Mostrar un monumento por id
-    -Crear un nuevo monumento
-    -Modificar un monumento
-    -Eliminar un monumento
-     */
-
     //List all monuments
 
+    /*
+    El método devolverá una lista de Monumentos con el código de estado 200. En el método "body" no ponemos lo que
+    queremos que devuelva para mostrar, y será la lista de monumentos.
+     */
     @GetMapping("/")
-    public List<Monument> findAll(){
+    public ResponseEntity<List<Monument>> findAll(){
 
-        return repository.findAll();
-
+        return ResponseEntity.ok()
+                              .body(repository.findAll());
     }
 
 
     //Show a monument by id
 
-    @GetMapping("/{id}")
-    public Monument findOne(@PathVariable("id") Long id){
+    /*
+     El método "of" devuelve un optional<T>, y es una forma acortada de pedirle que devuelva un código de estado 200
+     y el mensaje del cuerpo. En este caso, el monumento del id especificado.
 
-        return repository.findById(id).orElse(null);
-    }
+     Nota: En @PathVariable, si quisieramos ponerle un nombre distinto al del identificador que usamos, debemos agregar
+     en la anotacion @PathVariable("id")
+     */
+   @GetMapping("/{id}")
+    public ResponseEntity<Monument> findOne(@PathVariable Long id){
 
+        return ResponseEntity.of(repository.findById(id));
 
+   }
     //Create a new monument
-
+    //El método status(HttpStatus.CREATED) devuelve el código de estado 201 (creado).
     @PostMapping("/")
     public ResponseEntity<Monument> create(@RequestBody Monument m){
 
-        return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(m));
+        return ResponseEntity.status(HttpStatus.CREATED)
+                             .body(repository.save(m));
 
     }
 
     //Edit a monument
 
+    /*
+    El método findById(id) devuelve un Optional, lo que nos permite trabajar con lambdas. El método .map nos permite mapear
+    un objeto para cambiarle el tipo; de esta forma, podemos usar el Optional para convertirlo en "Monument" y así poder setear los cambios
+    del monumento que le pasamos gracias a la anotación @RequestBody.
+
+    Nota: @RequestBody nos obliga a que los nombres de los atributos que pasamos por JSON sean iguales a los escritos en la clase java.
+     */
     @PutMapping("/{id}")
-    public Monument edit(@RequestBody Monument monument, @PathVariable Long id){
+    public ResponseEntity<Monument> edit(@RequestBody Monument monument, @PathVariable Long id) {
 
-    Monument m = repository.findById(id).orElse(monument);
+        return ResponseEntity.of(repository.findById(id)
+                .map(x -> {
 
-    m.setCountryName(monument.getCountryName());
-    m.setCityName(monument.getName());
-    m.setDescription(monument.getDescription());
-    m.setLocation(monument.getLocation());
-    m.setIsoCode(monument.getIsoCode());
-    m.setName(monument.getName());
-    m.setPhoto(monument.getPhoto());
+                    x.setIsoCode(monument.getIsoCode());
+                    x.setCountryName(monument.getCountryName());
+                    x.setCityName(monument.getCityName());
+                    x.setLocation(monument.getLocation());
+                    x.setName(monument.getName());
+                    x.setDescription(monument.getDescription());
+                    x.setPhoto(monument.getPhoto());
 
-    return repository.save(m);
+                    repository.save(x);
+                    return x;
+                })
+        );
 
 
     }
 
 
-
     //Delete a monument
 
+    /*
+    El método noContent() crea un "builder" con un código de estado NO CONTENT o 204. Al no ser un método final, debe
+    cerrarse con .build()
+
+    Otra forma de escribir el mismo método sería:
+                ResponseEntity.status(204)
+                              .build();
+     */
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> delete(@PathVariable("id") Long id){
+    public ResponseEntity<?> delete(@PathVariable Long id){
 
         repository.deleteById(id);
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.noContent()
+                             .build();
 
 
     }
