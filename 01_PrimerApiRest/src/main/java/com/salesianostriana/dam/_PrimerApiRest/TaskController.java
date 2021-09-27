@@ -23,15 +23,16 @@ public class TaskController {
 
     }
 
-
+    //Si pusieramos una de nuestras clases el código de respuesta sería 200, si necesitasemos otra,
+    //usaremos ResponseEntity<T>
     @PostMapping("/")
     public ResponseEntity<Task> create(@RequestBody Task task){
-
 
         //Esto nos permite modificar el código de estado de la respuesta (que antes salía 200 cuando
         // debía aparecer 201)
         return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(task));
     }
+    //@RequestBody T t --> Necesita la estructura de la clase genérica que se le pasa.
 
 
 
@@ -61,6 +62,7 @@ public class TaskController {
 
         old.setText(task.getText());
         old.setTitle(task.getTitle());
+
 
         return repository.save(old);
 

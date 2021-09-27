@@ -20,6 +20,9 @@ public class Task {
     private Long id;
 
     private String title;
+    //@Lob --> nos permitiría convertir el objeto inferior en un objeto grande
+    //@Column(size:1000) --> también nos permite aumentar el tamaño de caracteres.
+    //@Column(columnDefinition = "TEXT")
     private String text;
 
 
