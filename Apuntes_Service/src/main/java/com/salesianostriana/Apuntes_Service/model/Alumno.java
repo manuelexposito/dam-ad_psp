@@ -3,6 +3,8 @@ package com.salesianostriana.Apuntes_Service.model;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -21,8 +23,18 @@ public class Alumno {
   //  @JoinColumn(name = "curso", foreignKey = @ForeignKey(name = "FK_ALUMNO_CURSO"))
     private Curso curso;
 
+    @ManyToMany
+    @JoinTable(joinColumns = @JoinColumn(name = "alumno_id"),
+                            inverseJoinColumns = @JoinColumn (name = "asignatura_id"),
+                            name = "matriculaciones")
+    List<Asignatura> asignaturas = new ArrayList<>();
 
     ///HELPERS
+
+
+
+
+
     public void addCurso(Curso c){
         this.curso = c;
         c.getAlumnos().add(this);
