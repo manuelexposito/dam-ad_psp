@@ -22,6 +22,11 @@ public class Curso {
 
     private String nombre, tutor;
 
+    @Builder.Default //Con esta anotación, si no le pasamos un valor a "asignaturas", tomará el que está INICIALIZADO AQUÍ
+    @OneToMany(mappedBy = "curso")
+    private List<Asignatura> asignaturas = new ArrayList<>();
+
+    @Builder.Default
     @OneToMany(mappedBy = "curso")
     private List<Alumno> alumnos = new ArrayList<>();
 

@@ -20,19 +20,22 @@ public class Alumno {
 
 
     @ManyToOne
-  //  @JoinColumn(name = "curso", foreignKey = @ForeignKey(name = "FK_ALUMNO_CURSO"))
+    @JoinColumn(name = "curso", foreignKey = @ForeignKey(name = "FK_ALUMNO_CURSO"))
     private Curso curso;
 
+    /*
     @ManyToMany
     @JoinTable(joinColumns = @JoinColumn(name = "alumno_id"),
                             inverseJoinColumns = @JoinColumn (name = "asignatura_id"),
                             name = "matriculaciones")
-    List<Asignatura> asignaturas = new ArrayList<>();
+
+    private List<Asignatura> asignaturas = new ArrayList<>();
+    */
+
+    @OneToMany(mappedBy = "alumno")
+    private List<Notas> notas = new ArrayList<>();
 
     ///HELPERS
-
-
-
 
 
     public void addCurso(Curso c){
