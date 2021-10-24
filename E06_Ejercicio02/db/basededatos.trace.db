@@ -1,0 +1,12 @@
+2021-10-24 17:52:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Valor demasiado largo para la columna "DESCRIPCION VARCHAR(255)": "STRINGDECODE('A lo largo de la historia, hemos aprendido que cada vez que creamos, dise\u00f1amos, construimos o conceptualizamo... (273)"
+Value too long for column "DESCRIPCION VARCHAR(255)": "STRINGDECODE('A lo largo de la historia, hemos aprendido que cada vez que creamos, dise\u00f1amos, construimos o conceptualizamo... (273)"; SQL statement:
+insert into video (curso_id, descripcion, orden, titulo, url, id) values (?, ?, ?, ?, ?, ?) [22001-200]
+2021-10-24 17:53:25 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "VIDEOS" no encontrada
+Table "VIDEOS" not found; SQL statement:
+SELECT * FROM VIDEOS [42102-200]
+2021-10-24 17:53:31 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "CURSOS" no encontrada
+Table "CURSOS" not found; SQL statement:
+SELECT * FROM CURSOS [42102-200]
