@@ -1,0 +1,500 @@
+2021-10-25 17:07:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "
+    CREATE TABLE ADDED_TO (
+       PLAYLIST_ID BIGINT NOT NULL,
+        SONG_ID BIGINT NOT NULL,
+        DATE_TIME TIMESTAMP,
+        ORDER[*] INTEGER NOT NULL,
+        PRIMARY KEY (PLAYLIST_ID, SONG_ID)
+    )"; se esperaba "identifier"
+Syntax error in SQL statement "
+    CREATE TABLE ADDED_TO (
+       PLAYLIST_ID BIGINT NOT NULL,
+        SONG_ID BIGINT NOT NULL,
+        DATE_TIME TIMESTAMP,
+        ORDER[*] INTEGER NOT NULL,
+        PRIMARY KEY (PLAYLIST_ID, SONG_ID)
+    )"; expected "identifier"; SQL statement:
+
+    create table added_to (
+       playlist_id bigint not null,
+        song_id bigint not null,
+        date_time timestamp,
+        order integer not null,
+        primary key (playlist_id, song_id)
+    ) [42001-200]
+2021-10-25 17:07:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ADDED_TO" no encontrada
+Table "ADDED_TO" not found; SQL statement:
+
+    alter table added_to 
+       add constraint FKl8srshxx8gl1x48e6qy5e22qy 
+       foreign key (playlist_id) 
+       references playlist [42102-200]
+2021-10-25 17:07:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ADDED_TO" no encontrada
+Table "ADDED_TO" not found; SQL statement:
+
+    alter table added_to 
+       add constraint FK8bkiut1d6qcnl489nivvtp58p 
+       foreign key (song_id) 
+       references song [42102-200]
+2021-10-25 17:09:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "
+    CREATE TABLE ADDED_TO (
+       PLAYLIST_ID BIGINT NOT NULL,
+        SONG_ID BIGINT NOT NULL,
+        DATE_TIME TIMESTAMP,
+        ORDER[*] INTEGER NOT NULL,
+        PRIMARY KEY (PLAYLIST_ID, SONG_ID)
+    )"; se esperaba "identifier"
+Syntax error in SQL statement "
+    CREATE TABLE ADDED_TO (
+       PLAYLIST_ID BIGINT NOT NULL,
+        SONG_ID BIGINT NOT NULL,
+        DATE_TIME TIMESTAMP,
+        ORDER[*] INTEGER NOT NULL,
+        PRIMARY KEY (PLAYLIST_ID, SONG_ID)
+    )"; expected "identifier"; SQL statement:
+
+    create table added_to (
+       playlist_id bigint not null,
+        song_id bigint not null,
+        date_time timestamp,
+        order integer not null,
+        primary key (playlist_id, song_id)
+    ) [42001-200]
+2021-10-25 17:09:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ADDED_TO" no encontrada
+Table "ADDED_TO" not found; SQL statement:
+
+    alter table added_to 
+       add constraint FKl8srshxx8gl1x48e6qy5e22qy 
+       foreign key (playlist_id) 
+       references playlist [42102-200]
+2021-10-25 17:09:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ADDED_TO" no encontrada
+Table "ADDED_TO" not found; SQL statement:
+
+    alter table added_to 
+       add constraint FK8bkiut1d6qcnl489nivvtp58p 
+       foreign key (song_id) 
+       references song [42102-200]
+2021-10-25 17:12:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "
+    CREATE TABLE ADDED_TO (
+       PLAYLIST_ID BIGINT NOT NULL,
+        SONG_ID BIGINT NOT NULL,
+        DATE_TIME TIMESTAMP,
+        ORDER[*] INTEGER NOT NULL,
+        PRIMARY KEY (PLAYLIST_ID, SONG_ID)
+    )"; se esperaba "identifier"
+Syntax error in SQL statement "
+    CREATE TABLE ADDED_TO (
+       PLAYLIST_ID BIGINT NOT NULL,
+        SONG_ID BIGINT NOT NULL,
+        DATE_TIME TIMESTAMP,
+        ORDER[*] INTEGER NOT NULL,
+        PRIMARY KEY (PLAYLIST_ID, SONG_ID)
+    )"; expected "identifier"; SQL statement:
+
+    create table added_to (
+       playlist_id bigint not null,
+        song_id bigint not null,
+        date_time timestamp,
+        order integer not null,
+        primary key (playlist_id, song_id)
+    ) [42001-200]
+2021-10-25 17:12:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ADDED_TO" no encontrada
+Table "ADDED_TO" not found; SQL statement:
+
+    alter table added_to 
+       add constraint FKl8srshxx8gl1x48e6qy5e22qy 
+       foreign key (playlist_id) 
+       references playlist [42102-200]
+2021-10-25 17:12:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ADDED_TO" no encontrada
+Table "ADDED_TO" not found; SQL statement:
+
+    alter table added_to 
+       add constraint FK8bkiut1d6qcnl489nivvtp58p 
+       foreign key (song_id) 
+       references song [42102-200]
+2021-10-25 17:13:54 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "
+    CREATE TABLE ADDED_TO (
+       PLAYLIST_ID BIGINT NOT NULL,
+        SONG_ID BIGINT NOT NULL,
+        DATE_TIME TIMESTAMP,
+        ORDER[*] INTEGER NOT NULL,
+        PRIMARY KEY (PLAYLIST_ID, SONG_ID)
+    )"; se esperaba "identifier"
+Syntax error in SQL statement "
+    CREATE TABLE ADDED_TO (
+       PLAYLIST_ID BIGINT NOT NULL,
+        SONG_ID BIGINT NOT NULL,
+        DATE_TIME TIMESTAMP,
+        ORDER[*] INTEGER NOT NULL,
+        PRIMARY KEY (PLAYLIST_ID, SONG_ID)
+    )"; expected "identifier"; SQL statement:
+
+    create table added_to (
+       playlist_id bigint not null,
+        song_id bigint not null,
+        date_time timestamp,
+        order integer not null,
+        primary key (playlist_id, song_id)
+    ) [42001-200]
+2021-10-25 17:13:54 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ADDED_TO" no encontrada
+Table "ADDED_TO" not found; SQL statement:
+
+    alter table added_to 
+       add constraint FKl8srshxx8gl1x48e6qy5e22qy 
+       foreign key (playlist_id) 
+       references playlist [42102-200]
+2021-10-25 17:13:54 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ADDED_TO" no encontrada
+Table "ADDED_TO" not found; SQL statement:
+
+    alter table added_to 
+       add constraint FK8bkiut1d6qcnl489nivvtp58p 
+       foreign key (song_id) 
+       references song [42102-200]
+2021-10-25 17:17:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "
+    CREATE TABLE ADDED_TO (
+       PLAYLIST_ID BIGINT NOT NULL,
+        SONG_ID BIGINT NOT NULL,
+        DATE_TIME TIMESTAMP,
+        ORDER[*] INTEGER NOT NULL,
+        PRIMARY KEY (PLAYLIST_ID, SONG_ID)
+    )"; se esperaba "identifier"
+Syntax error in SQL statement "
+    CREATE TABLE ADDED_TO (
+       PLAYLIST_ID BIGINT NOT NULL,
+        SONG_ID BIGINT NOT NULL,
+        DATE_TIME TIMESTAMP,
+        ORDER[*] INTEGER NOT NULL,
+        PRIMARY KEY (PLAYLIST_ID, SONG_ID)
+    )"; expected "identifier"; SQL statement:
+
+    create table added_to (
+       playlist_id bigint not null,
+        song_id bigint not null,
+        date_time timestamp,
+        order integer not null,
+        primary key (playlist_id, song_id)
+    ) [42001-200]
+2021-10-25 17:17:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ADDED_TO" no encontrada
+Table "ADDED_TO" not found; SQL statement:
+
+    alter table added_to 
+       add constraint FKl8srshxx8gl1x48e6qy5e22qy 
+       foreign key (playlist_id) 
+       references playlist [42102-200]
+2021-10-25 17:17:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ADDED_TO" no encontrada
+Table "ADDED_TO" not found; SQL statement:
+
+    alter table added_to 
+       add constraint FK8bkiut1d6qcnl489nivvtp58p 
+       foreign key (song_id) 
+       references song [42102-200]
+2021-10-25 17:20:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "
+    CREATE TABLE ADDED_TO (
+       PLAYLIST_ID BIGINT NOT NULL,
+        SONG_ID BIGINT NOT NULL,
+        DATE_TIME TIMESTAMP,
+        ORDER[*] INTEGER NOT NULL,
+        PRIMARY KEY (PLAYLIST_ID, SONG_ID)
+    )"; se esperaba "identifier"
+Syntax error in SQL statement "
+    CREATE TABLE ADDED_TO (
+       PLAYLIST_ID BIGINT NOT NULL,
+        SONG_ID BIGINT NOT NULL,
+        DATE_TIME TIMESTAMP,
+        ORDER[*] INTEGER NOT NULL,
+        PRIMARY KEY (PLAYLIST_ID, SONG_ID)
+    )"; expected "identifier"; SQL statement:
+
+    create table added_to (
+       playlist_id bigint not null,
+        song_id bigint not null,
+        date_time timestamp,
+        order integer not null,
+        primary key (playlist_id, song_id)
+    ) [42001-200]
+2021-10-25 17:20:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ADDED_TO" no encontrada
+Table "ADDED_TO" not found; SQL statement:
+
+    alter table added_to 
+       add constraint FKl8srshxx8gl1x48e6qy5e22qy 
+       foreign key (playlist_id) 
+       references playlist [42102-200]
+2021-10-25 17:20:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ADDED_TO" no encontrada
+Table "ADDED_TO" not found; SQL statement:
+
+    alter table added_to 
+       add constraint FK8bkiut1d6qcnl489nivvtp58p 
+       foreign key (song_id) 
+       references song [42102-200]
+2021-10-25 17:22:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "
+    CREATE TABLE ADDED_TO (
+       PLAYLIST_ID BIGINT NOT NULL,
+        SONG_ID BIGINT NOT NULL,
+        DATE_TIME TIMESTAMP,
+        ORDER[*] INTEGER NOT NULL,
+        PRIMARY KEY (PLAYLIST_ID, SONG_ID)
+    )"; se esperaba "identifier"
+Syntax error in SQL statement "
+    CREATE TABLE ADDED_TO (
+       PLAYLIST_ID BIGINT NOT NULL,
+        SONG_ID BIGINT NOT NULL,
+        DATE_TIME TIMESTAMP,
+        ORDER[*] INTEGER NOT NULL,
+        PRIMARY KEY (PLAYLIST_ID, SONG_ID)
+    )"; expected "identifier"; SQL statement:
+
+    create table added_to (
+       playlist_id bigint not null,
+        song_id bigint not null,
+        date_time timestamp,
+        order integer not null,
+        primary key (playlist_id, song_id)
+    ) [42001-200]
+2021-10-25 17:22:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ADDED_TO" no encontrada
+Table "ADDED_TO" not found; SQL statement:
+
+    alter table added_to 
+       add constraint FKl8srshxx8gl1x48e6qy5e22qy 
+       foreign key (playlist_id) 
+       references playlist [42102-200]
+2021-10-25 17:22:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ADDED_TO" no encontrada
+Table "ADDED_TO" not found; SQL statement:
+
+    alter table added_to 
+       add constraint FK8bkiut1d6qcnl489nivvtp58p 
+       foreign key (song_id) 
+       references song [42102-200]
+2021-10-25 17:27:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "
+    CREATE TABLE ADDED_TO (
+       PLAYLIST_ID BIGINT NOT NULL,
+        SONG_ID BIGINT NOT NULL,
+        DATE_TIME TIMESTAMP,
+        ORDER[*] INTEGER NOT NULL,
+        PRIMARY KEY (PLAYLIST_ID, SONG_ID)
+    )"; se esperaba "identifier"
+Syntax error in SQL statement "
+    CREATE TABLE ADDED_TO (
+       PLAYLIST_ID BIGINT NOT NULL,
+        SONG_ID BIGINT NOT NULL,
+        DATE_TIME TIMESTAMP,
+        ORDER[*] INTEGER NOT NULL,
+        PRIMARY KEY (PLAYLIST_ID, SONG_ID)
+    )"; expected "identifier"; SQL statement:
+
+    create table added_to (
+       playlist_id bigint not null,
+        song_id bigint not null,
+        date_time timestamp,
+        order integer not null,
+        primary key (playlist_id, song_id)
+    ) [42001-200]
+2021-10-25 17:27:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ADDED_TO" no encontrada
+Table "ADDED_TO" not found; SQL statement:
+
+    alter table added_to 
+       add constraint FKl8srshxx8gl1x48e6qy5e22qy 
+       foreign key (playlist_id) 
+       references playlist [42102-200]
+2021-10-25 17:27:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ADDED_TO" no encontrada
+Table "ADDED_TO" not found; SQL statement:
+
+    alter table added_to 
+       add constraint FK8bkiut1d6qcnl489nivvtp58p 
+       foreign key (song_id) 
+       references song [42102-200]
+2021-10-25 17:49:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "
+    CREATE TABLE ADDED_TO (
+       PLAYLIST_ID BIGINT NOT NULL,
+        SONG_ID BIGINT NOT NULL,
+        DATE_TIME TIMESTAMP,
+        ORDER[*] INTEGER NOT NULL,
+        PRIMARY KEY (PLAYLIST_ID, SONG_ID)
+    )"; se esperaba "identifier"
+Syntax error in SQL statement "
+    CREATE TABLE ADDED_TO (
+       PLAYLIST_ID BIGINT NOT NULL,
+        SONG_ID BIGINT NOT NULL,
+        DATE_TIME TIMESTAMP,
+        ORDER[*] INTEGER NOT NULL,
+        PRIMARY KEY (PLAYLIST_ID, SONG_ID)
+    )"; expected "identifier"; SQL statement:
+
+    create table added_to (
+       playlist_id bigint not null,
+        song_id bigint not null,
+        date_time timestamp,
+        order integer not null,
+        primary key (playlist_id, song_id)
+    ) [42001-200]
+2021-10-25 17:49:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ADDED_TO" no encontrada
+Table "ADDED_TO" not found; SQL statement:
+
+    alter table added_to 
+       add constraint FKl8srshxx8gl1x48e6qy5e22qy 
+       foreign key (playlist_id) 
+       references playlist [42102-200]
+2021-10-25 17:49:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ADDED_TO" no encontrada
+Table "ADDED_TO" not found; SQL statement:
+
+    alter table added_to 
+       add constraint FK8bkiut1d6qcnl489nivvtp58p 
+       foreign key (song_id) 
+       references song [42102-200]
+2021-10-25 17:51:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "
+    CREATE TABLE ADDED_TO (
+       PLAYLIST_ID BIGINT NOT NULL,
+        SONG_ID BIGINT NOT NULL,
+        DATE_TIME TIMESTAMP,
+        ORDER[*] INTEGER NOT NULL,
+        PRIMARY KEY (PLAYLIST_ID, SONG_ID)
+    )"; se esperaba "identifier"
+Syntax error in SQL statement "
+    CREATE TABLE ADDED_TO (
+       PLAYLIST_ID BIGINT NOT NULL,
+        SONG_ID BIGINT NOT NULL,
+        DATE_TIME TIMESTAMP,
+        ORDER[*] INTEGER NOT NULL,
+        PRIMARY KEY (PLAYLIST_ID, SONG_ID)
+    )"; expected "identifier"; SQL statement:
+
+    create table added_to (
+       playlist_id bigint not null,
+        song_id bigint not null,
+        date_time timestamp,
+        order integer not null,
+        primary key (playlist_id, song_id)
+    ) [42001-200]
+2021-10-25 17:51:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ADDED_TO" no encontrada
+Table "ADDED_TO" not found; SQL statement:
+
+    alter table added_to 
+       add constraint FKl8srshxx8gl1x48e6qy5e22qy 
+       foreign key (playlist_id) 
+       references playlist [42102-200]
+2021-10-25 17:51:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ADDED_TO" no encontrada
+Table "ADDED_TO" not found; SQL statement:
+
+    alter table added_to 
+       add constraint FK8bkiut1d6qcnl489nivvtp58p 
+       foreign key (song_id) 
+       references song [42102-200]
+2021-10-25 17:53:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "
+    CREATE TABLE ADDED_TO (
+       PLAYLIST_ID BIGINT NOT NULL,
+        SONG_ID BIGINT NOT NULL,
+        DATE_TIME TIMESTAMP,
+        ORDER[*] INTEGER NOT NULL,
+        PRIMARY KEY (PLAYLIST_ID, SONG_ID)
+    )"; se esperaba "identifier"
+Syntax error in SQL statement "
+    CREATE TABLE ADDED_TO (
+       PLAYLIST_ID BIGINT NOT NULL,
+        SONG_ID BIGINT NOT NULL,
+        DATE_TIME TIMESTAMP,
+        ORDER[*] INTEGER NOT NULL,
+        PRIMARY KEY (PLAYLIST_ID, SONG_ID)
+    )"; expected "identifier"; SQL statement:
+
+    create table added_to (
+       playlist_id bigint not null,
+        song_id bigint not null,
+        date_time timestamp,
+        order integer not null,
+        primary key (playlist_id, song_id)
+    ) [42001-200]
+2021-10-25 17:53:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ADDED_TO" no encontrada
+Table "ADDED_TO" not found; SQL statement:
+
+    alter table added_to 
+       add constraint FKl8srshxx8gl1x48e6qy5e22qy 
+       foreign key (playlist_id) 
+       references playlist [42102-200]
+2021-10-25 17:53:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ADDED_TO" no encontrada
+Table "ADDED_TO" not found; SQL statement:
+
+    alter table added_to 
+       add constraint FK8bkiut1d6qcnl489nivvtp58p 
+       foreign key (song_id) 
+       references song [42102-200]
+2021-10-25 17:53:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT SONG0_.ID AS ID1_3_1_, SONG0_.ALBUM AS ALBUM2_3_1_, SONG0_.ARTIST_ID AS ARTIST_I5_3_1_, SONG0_.TITLE AS TITLE3_3_1_, SONG0_.YEAR AS YEAR4_3_1_, ADDEDTOPLA1_.SONG_ID AS SONG_ID2_0_3_, ADDEDTOPLA1_.PLAYLIST_ID AS PLAYLIST1_0_3_, ADDEDTOPLA1_.PLAYLIST_ID AS PLAYLIST1_0_0_, ADDEDTOPLA1_.SONG_ID AS SONG_ID2_0_0_, ADDEDTOPLA1_.DATE_TIME AS DATE_TIM3_0_0_, ADDEDTOPLA1_.ORDER[*] AS ORDER4_0_0_ FROM SONG SONG0_ LEFT OUTER JOIN ADDED_TO ADDEDTOPLA1_ ON SONG0_.ID=ADDEDTOPLA1_.SONG_ID WHERE SONG0_.ID=?"; se esperaba "identifier"
+Syntax error in SQL statement "SELECT SONG0_.ID AS ID1_3_1_, SONG0_.ALBUM AS ALBUM2_3_1_, SONG0_.ARTIST_ID AS ARTIST_I5_3_1_, SONG0_.TITLE AS TITLE3_3_1_, SONG0_.YEAR AS YEAR4_3_1_, ADDEDTOPLA1_.SONG_ID AS SONG_ID2_0_3_, ADDEDTOPLA1_.PLAYLIST_ID AS PLAYLIST1_0_3_, ADDEDTOPLA1_.PLAYLIST_ID AS PLAYLIST1_0_0_, ADDEDTOPLA1_.SONG_ID AS SONG_ID2_0_0_, ADDEDTOPLA1_.DATE_TIME AS DATE_TIM3_0_0_, ADDEDTOPLA1_.ORDER[*] AS ORDER4_0_0_ FROM SONG SONG0_ LEFT OUTER JOIN ADDED_TO ADDEDTOPLA1_ ON SONG0_.ID=ADDEDTOPLA1_.SONG_ID WHERE SONG0_.ID=?"; expected "identifier"; SQL statement:
+select song0_.id as id1_3_1_, song0_.album as album2_3_1_, song0_.artist_id as artist_i5_3_1_, song0_.title as title3_3_1_, song0_.year as year4_3_1_, addedtopla1_.song_id as song_id2_0_3_, addedtopla1_.playlist_id as playlist1_0_3_, addedtopla1_.playlist_id as playlist1_0_0_, addedtopla1_.song_id as song_id2_0_0_, addedtopla1_.date_time as date_tim3_0_0_, addedtopla1_.order as order4_0_0_ from song song0_ left outer join added_to addedtopla1_ on song0_.id=addedtopla1_.song_id where song0_.id=? [42001-200]
+2021-10-25 17:56:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "
+    CREATE TABLE ADDED_TO (
+       PLAYLIST_ID BIGINT NOT NULL,
+        SONG_ID BIGINT NOT NULL,
+        DATE_TIME TIMESTAMP,
+        ORDER[*] INTEGER NOT NULL,
+        PRIMARY KEY (PLAYLIST_ID, SONG_ID)
+    )"; se esperaba "identifier"
+Syntax error in SQL statement "
+    CREATE TABLE ADDED_TO (
+       PLAYLIST_ID BIGINT NOT NULL,
+        SONG_ID BIGINT NOT NULL,
+        DATE_TIME TIMESTAMP,
+        ORDER[*] INTEGER NOT NULL,
+        PRIMARY KEY (PLAYLIST_ID, SONG_ID)
+    )"; expected "identifier"; SQL statement:
+
+    create table added_to (
+       playlist_id bigint not null,
+        song_id bigint not null,
+        date_time timestamp,
+        order integer not null,
+        primary key (playlist_id, song_id)
+    ) [42001-200]
+2021-10-25 17:56:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ADDED_TO" no encontrada
+Table "ADDED_TO" not found; SQL statement:
+
+    alter table added_to 
+       add constraint FKl8srshxx8gl1x48e6qy5e22qy 
+       foreign key (playlist_id) 
+       references playlist [42102-200]
+2021-10-25 17:56:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ADDED_TO" no encontrada
+Table "ADDED_TO" not found; SQL statement:
+
+    alter table added_to 
+       add constraint FK8bkiut1d6qcnl489nivvtp58p 
+       foreign key (song_id) 
+       references song [42102-200]
+2021-10-25 17:56:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT SONG0_.ID AS ID1_3_1_, SONG0_.ALBUM AS ALBUM2_3_1_, SONG0_.ARTIST_ID AS ARTIST_I5_3_1_, SONG0_.TITLE AS TITLE3_3_1_, SONG0_.YEAR AS YEAR4_3_1_, ADDEDTOPLA1_.SONG_ID AS SONG_ID2_0_3_, ADDEDTOPLA1_.PLAYLIST_ID AS PLAYLIST1_0_3_, ADDEDTOPLA1_.PLAYLIST_ID AS PLAYLIST1_0_0_, ADDEDTOPLA1_.SONG_ID AS SONG_ID2_0_0_, ADDEDTOPLA1_.DATE_TIME AS DATE_TIM3_0_0_, ADDEDTOPLA1_.ORDER[*] AS ORDER4_0_0_ FROM SONG SONG0_ LEFT OUTER JOIN ADDED_TO ADDEDTOPLA1_ ON SONG0_.ID=ADDEDTOPLA1_.SONG_ID WHERE SONG0_.ID=?"; se esperaba "identifier"
+Syntax error in SQL statement "SELECT SONG0_.ID AS ID1_3_1_, SONG0_.ALBUM AS ALBUM2_3_1_, SONG0_.ARTIST_ID AS ARTIST_I5_3_1_, SONG0_.TITLE AS TITLE3_3_1_, SONG0_.YEAR AS YEAR4_3_1_, ADDEDTOPLA1_.SONG_ID AS SONG_ID2_0_3_, ADDEDTOPLA1_.PLAYLIST_ID AS PLAYLIST1_0_3_, ADDEDTOPLA1_.PLAYLIST_ID AS PLAYLIST1_0_0_, ADDEDTOPLA1_.SONG_ID AS SONG_ID2_0_0_, ADDEDTOPLA1_.DATE_TIME AS DATE_TIM3_0_0_, ADDEDTOPLA1_.ORDER[*] AS ORDER4_0_0_ FROM SONG SONG0_ LEFT OUTER JOIN ADDED_TO ADDEDTOPLA1_ ON SONG0_.ID=ADDEDTOPLA1_.SONG_ID WHERE SONG0_.ID=?"; expected "identifier"; SQL statement:
+select song0_.id as id1_3_1_, song0_.album as album2_3_1_, song0_.artist_id as artist_i5_3_1_, song0_.title as title3_3_1_, song0_.year as year4_3_1_, addedtopla1_.song_id as song_id2_0_3_, addedtopla1_.playlist_id as playlist1_0_3_, addedtopla1_.playlist_id as playlist1_0_0_, addedtopla1_.song_id as song_id2_0_0_, addedtopla1_.date_time as date_tim3_0_0_, addedtopla1_.order as order4_0_0_ from song song0_ left outer join added_to addedtopla1_ on song0_.id=addedtopla1_.song_id where song0_.id=? [42001-200]

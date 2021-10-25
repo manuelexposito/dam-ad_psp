@@ -2,10 +2,12 @@ package com.salesianostriana.e07_modelosmanytomany.services.base;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public abstract class BaseService<T, ID, R extends JpaRepository<T, ID>>{
 
     @Autowired

@@ -16,12 +16,13 @@ import java.util.List;
 public class Playlist implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
 
-    @OneToMany(mappedBy = "playlist")
+    @Builder.Default
+    @OneToMany(mappedBy = "playlist", cascade = CascadeType.ALL)
     private List<AddedTo> songsAdded = new ArrayList<>();
 
     @Lob

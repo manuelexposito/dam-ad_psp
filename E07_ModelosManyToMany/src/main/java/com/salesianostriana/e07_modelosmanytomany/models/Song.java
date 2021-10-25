@@ -22,10 +22,24 @@ public class Song implements Serializable {
     @ManyToOne
     private Artist artist;
 
-    @OneToMany(mappedBy = "song")
+    @Builder.Default
+    @OneToMany(mappedBy = "song", cascade = CascadeType.ALL)
     private List<AddedTo> addedToPlaylist = new ArrayList<>();
 
 
     private String title, album, year;
+
+    //helpers
+
+    public void addSongToArtist(Artist a){
+        a.getSongs().add(this);
+        this.setArtist(a);
+    }
+
+    public void removeSongFromArtist(Artist a){
+        a.getSongs().remove(a);
+        this.setArtist(null);
+
+    }
 
 }

@@ -37,12 +37,18 @@ public class MainPrueba {
             .album("Montero")
             .year("2021").build();
 
-    a.addSongToArtist(s);
+
+
     songService.save(s);
+
     artistService.save(a);
 
-    //Crear playlist y probar
+        s.addSongToArtist(a);
+        artistService.edit(a);
+        songService.edit(s);
 
+    //Crear playlist y probar
+/*
     Playlist pl = Playlist.builder()
             .name("Playlist de prueba")
             .description("Playlist para meter canciones bien perronas")
@@ -54,7 +60,10 @@ public class MainPrueba {
 
     addSong.addToPlaylist(pl);
     addSong.addPlaylistToSong(s);
+    addedToService.save(addSong);
 
-    }
+*/
+}
 
 }
+

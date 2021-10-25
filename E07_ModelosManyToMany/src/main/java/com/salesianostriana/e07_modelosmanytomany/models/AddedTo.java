@@ -3,12 +3,13 @@ package com.salesianostriana.e07_modelosmanytomany.models;
 import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Entity
 @Getter @Setter
 @AllArgsConstructor @NoArgsConstructor @Builder
-public class AddedTo {
+public class AddedTo implements Serializable {
 
     @EmbeddedId
     private SongPlaylistPK id = new SongPlaylistPK();
@@ -34,7 +35,6 @@ public class AddedTo {
 
         this.playlist = pl;
         this.dateTime = LocalDateTime.now();
-
         pl.getSongsAdded().add(this);
 
     }
