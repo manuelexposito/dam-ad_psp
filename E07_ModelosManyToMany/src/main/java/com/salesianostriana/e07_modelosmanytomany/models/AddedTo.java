@@ -11,19 +11,22 @@ import java.time.LocalDateTime;
 @AllArgsConstructor @NoArgsConstructor @Builder
 public class AddedTo implements Serializable {
 
+    @Builder.Default
     @EmbeddedId
     private SongPlaylistPK id = new SongPlaylistPK();
 
     private LocalDateTime dateTime;
-    private int order;
+
+    @Builder.Default
+    private int orden = 0;
 
     @ManyToOne
-    @MapsId("songId")
+    @MapsId("song_id")
     @JoinColumn(name = "song_id")
     private Song song;
 
     @ManyToOne
-    @MapsId("playlistId")
+    @MapsId("playlist_id")
     @JoinColumn(name = "playlist_id")
     private Playlist playlist;
 
@@ -33,29 +36,28 @@ public class AddedTo implements Serializable {
     //añade la canción a la playlist
     public void addToPlaylist(Playlist pl){
 
-        this.playlist = pl;
-        this.dateTime = LocalDateTime.now();
+        this.setPlaylist(pl);
         pl.getSongsAdded().add(this);
 
     }
 
     public void removeFromPlaylist(Playlist pl){
 
-        this.playlist = null;
+        this.setPlaylist(null);
         pl.getSongsAdded().remove(this);
     }
 
     //añade a la canción la playlist a la que pertenece
     public void addPlaylistToSong(Song s){
 
-        this.song = s;
+        this.setSong(s);
         s.getAddedToPlaylist().add(this);
 
     }
 
     public void removePlaylistFromSong(Song s){
 
-        this.song = null;
+        this.setSong(null);
         s.getAddedToPlaylist().remove(s);
     }
 

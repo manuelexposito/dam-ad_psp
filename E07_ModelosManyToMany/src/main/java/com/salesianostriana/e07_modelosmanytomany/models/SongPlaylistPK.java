@@ -2,6 +2,7 @@ package com.salesianostriana.e07_modelosmanytomany.models;
 
 import lombok.*;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import java.io.Serializable;
 
@@ -10,8 +11,10 @@ import java.io.Serializable;
 @AllArgsConstructor @NoArgsConstructor @Builder
 public class SongPlaylistPK implements Serializable {
 
-    private Long songId;
+    @Column(name = "song_id")
+    private Long song_id;
 
-    private Long playlistId;
+    @Column(name = "playlist_id")
+    private Long playlist_id;
 
 }

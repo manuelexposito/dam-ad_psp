@@ -22,7 +22,7 @@ public class Playlist implements Serializable {
     private String name;
 
     @Builder.Default
-    @OneToMany(mappedBy = "playlist", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "playlist")
     private List<AddedTo> songsAdded = new ArrayList<>();
 
     @Lob

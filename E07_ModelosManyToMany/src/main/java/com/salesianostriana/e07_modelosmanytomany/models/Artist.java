@@ -25,18 +25,5 @@ public class Artist implements Serializable {
     private List<Song> songs = new ArrayList<>();
 
 
-    //HELPERS
-    /*
-    public void addSongToArtist(Song s){
-        this.getSongs().add(s);
-        s.setArtist(this);
-    }
-
-    public void removeSongFromArtist(Song s){
-        this.getSongs().remove(s);
-        s.setArtist(null);
-
-    }
-*/
 
 }

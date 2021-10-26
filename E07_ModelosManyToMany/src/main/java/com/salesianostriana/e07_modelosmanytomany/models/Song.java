@@ -1,6 +1,7 @@
 package com.salesianostriana.e07_modelosmanytomany.models;
 
 import lombok.*;
+import org.hibernate.annotations.Fetch;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -23,7 +24,7 @@ public class Song implements Serializable {
     private Artist artist;
 
     @Builder.Default
-    @OneToMany(mappedBy = "song", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "song")
     private List<AddedTo> addedToPlaylist = new ArrayList<>();
 
 
