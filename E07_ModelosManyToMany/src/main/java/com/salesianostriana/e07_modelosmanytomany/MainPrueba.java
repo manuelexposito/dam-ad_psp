@@ -10,6 +10,7 @@ import com.salesianostriana.e07_modelosmanytomany.services.ArtistService;
 import com.salesianostriana.e07_modelosmanytomany.services.PlaylistService;
 import com.salesianostriana.e07_modelosmanytomany.services.SongService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -17,6 +18,7 @@ import java.time.LocalDateTime;
 
 @Component
 @RequiredArgsConstructor
+@EnableJpaAuditing
 public class MainPrueba {
 
     private final ArtistService artistService;

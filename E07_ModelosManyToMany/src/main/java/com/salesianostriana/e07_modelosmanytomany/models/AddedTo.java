@@ -1,6 +1,8 @@
 package com.salesianostriana.e07_modelosmanytomany.models;
 
 import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -9,12 +11,14 @@ import java.time.LocalDateTime;
 @Entity
 @Getter @Setter
 @AllArgsConstructor @NoArgsConstructor @Builder
+@EntityListeners(AuditingEntityListener.class)
 public class AddedTo implements Serializable {
 
     @Builder.Default
     @EmbeddedId
     private SongPlaylistPK id = new SongPlaylistPK();
 
+    @CreatedDate
     private LocalDateTime dateTime;
 
     @Builder.Default
