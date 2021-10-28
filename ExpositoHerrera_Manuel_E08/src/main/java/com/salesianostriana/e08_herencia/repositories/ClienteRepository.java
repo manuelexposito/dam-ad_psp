@@ -9,6 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import java.util.List;
+import java.util.Optional;
 
 
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
@@ -26,4 +27,8 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
             """)
     List<Pedido> findAllPedidosFromClientesCorporativos();
 */
+
+    @EntityGraph(Cliente.CLIENTE_PEDIDO)
+    Optional<Cliente> findById(Long id);
+
 }

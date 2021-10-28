@@ -72,6 +72,9 @@ public class MainPrueba {
         c1.addPedido(p1);
         c1.addPedido(p2);
 
+        clienteRepository.findById(c1.getId());
+
+
         //No funciona. Aun no comprendo como usar los Entity Graphs.
     /*
         List <String> listaProductosDeCorporativos = clienteRepository.findAllPedidosFromClientesCorporativos().stream().map(x -> x.getProducto()).collect(Collectors.toList());

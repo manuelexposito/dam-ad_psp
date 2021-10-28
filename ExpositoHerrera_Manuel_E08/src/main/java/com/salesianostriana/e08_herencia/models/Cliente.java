@@ -10,7 +10,7 @@ import java.util.List;
 
 
 @NamedEntityGraph(
-        name = "grafo-pedido-cliente",
+        name = Cliente.CLIENTE_PEDIDO,
         attributeNodes = {
                 @NamedAttributeNode("pedidos")
         }
@@ -22,6 +22,10 @@ import java.util.List;
 @SuperBuilder
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Cliente implements Serializable {
+
+
+    public static final String CLIENTE_PEDIDO = "grafo-cliente-pedido";
+
 
     @Id
     @GeneratedValue
