@@ -1,5 +1,6 @@
 package com.salesianostriana.practicamanejoerrores.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -43,7 +44,8 @@ public class Estacion {
     @Lob
     private String servicios;
 
-    //Fecha del pasado. Ver anotaciones de validacion.
+    //TODO: Fecha del pasado. Ver anotaciones de validacion.
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm:ss")
     private LocalDateTime fechaApertura;
 
 

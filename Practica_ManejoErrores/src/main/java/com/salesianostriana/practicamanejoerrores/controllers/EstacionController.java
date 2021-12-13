@@ -1,14 +1,12 @@
 package com.salesianostriana.practicamanejoerrores.controllers;
 
+import com.salesianostriana.practicamanejoerrores.models.CreateEstacionDto;
 import com.salesianostriana.practicamanejoerrores.models.Estacion;
 import com.salesianostriana.practicamanejoerrores.models.EstacionDtoConverter;
 import com.salesianostriana.practicamanejoerrores.models.GetEstacionDto;
 import com.salesianostriana.practicamanejoerrores.services.EstacionService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -24,10 +22,10 @@ public class EstacionController {
 
     @GetMapping("/")
     private List<GetEstacionDto> findAll(){
-        //TODO: Problema de compatibilidad con Modelmapper --> Investigar
+
         List<Object> o = estacionService.findAll();
          return o.stream().map(dtoConverter::convertToDto).collect(Collectors.toList());
-      //  return null;
+
     }
 
     @GetMapping("/{id}")
@@ -36,6 +34,15 @@ public class EstacionController {
         Optional<Estacion> estacion = estacionService.findById(id);
 
         return estacion != null ? dtoConverter.convertToDto(estacion.get()) : null;
+
+    }
+
+    @PostMapping("/")
+    private GetEstacionDto createEstacion(@RequestBody CreateEstacionDto dto){
+
+        Object nuevaEstacion = estacionService.save(dto, dtoConverter);
+
+        return dtoConverter.convertToDto(nuevaEstacion);
 
     }
 

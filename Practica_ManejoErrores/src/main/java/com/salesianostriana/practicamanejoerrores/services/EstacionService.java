@@ -1,5 +1,7 @@
 package com.salesianostriana.practicamanejoerrores.services;
 
+import com.salesianostriana.practicamanejoerrores.models.CreateEstacionDto;
+import com.salesianostriana.practicamanejoerrores.models.EstacionDtoConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
@@ -25,6 +27,14 @@ public class EstacionService<Estacion, Long, EstacionRepository extends JpaRepos
     public Estacion save(Estacion e){
         return repository.save(e);
     }
+
+    public Estacion save(CreateEstacionDto dto, EstacionDtoConverter converter){
+
+        //return (Estacion) converter.convertToEstacion(dto);
+        return repository.save((Estacion) converter.convertToEstacion(dto));
+
+    }
+
 
     public Estacion edit(Estacion e){
         return save(e);
