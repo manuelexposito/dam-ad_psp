@@ -1,47 +1,91 @@
 package com.salesianostriana.practicamanejoerrores.services;
 
+import com.salesianostriana.practicamanejoerrores.errors.exceptions.ListEntitiesNotFoundException;
+import com.salesianostriana.practicamanejoerrores.errors.exceptions.SingleEntityNotFoundException;
 import com.salesianostriana.practicamanejoerrores.models.CreateEstacionDto;
+import com.salesianostriana.practicamanejoerrores.models.Estacion;
 import com.salesianostriana.practicamanejoerrores.models.EstacionDtoConverter;
+import com.salesianostriana.practicamanejoerrores.models.GetEstacionDto;
+import com.salesianostriana.practicamanejoerrores.repositories.EstacionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public class EstacionService<Estacion, Long, EstacionRepository extends JpaRepository<Estacion, Long>>{
+public class EstacionService {
 
     @Autowired
     private EstacionRepository repository;
 
-    public Optional<Estacion> findById(Long id){
+    public Estacion findById(Long id){
 
-        return repository.findById(id);
+        Optional<Estacion> estacion = repository.findById(id);
+
+        if (estacion.isEmpty()){
+            throw new SingleEntityNotFoundException(Estacion.class, id);
+        }else{
+            return estacion.get();
+        }
+
     }
 
     public List<Estacion> findAll(){
-        return repository.findAll();
+
+        //return repository.findAll();
+        List<Estacion> lista = repository.findAll();
+
+        if(lista.isEmpty()){
+            throw new ListEntitiesNotFoundException(GetEstacionDto.class);
+        } else{
+            return lista;
+        }
+
     }
 
     public Estacion save(Estacion e){
         return repository.save(e);
     }
 
+    //TODO : DUDA - No sé si se puede devolver por aquí el 201 CREATED o por donde sería
+    //porque con DELETE no funciona de volver el ResponseEntity
     public Estacion save(CreateEstacionDto dto, EstacionDtoConverter converter){
 
-        //return (Estacion) converter.convertToEstacion(dto);
         return repository.save((Estacion) converter.convertToEstacion(dto));
 
     }
 
+    public Estacion edit(Estacion e, CreateEstacionDto dto){
 
-    public Estacion edit(Estacion e){
+        e.setNombre(dto.getNombre());
+        e.setMarca(dto.getMarca());
+        e.setServicios(dto.getServicios());
+        e.setUbicacion(dto.getUbicacion());
+        e.setTieneAutolavado(dto.isTieneAutolavado());
+        e.setPrecioGasoilEspecial(dto.getPrecioGasoilEspecial());
+        e.setPrecioGasoilNormal(dto.getPrecioGasoilNormal());
+        e.setPrecioGasolina95Octanos(dto.getPrecioGasolina95Octanos());
+        e.setPrecioGasolina98(dto.getPrecioGasolina98());
+        e.setFechaApertura(dto.getFechaApertura());
         return save(e);
     }
 
-    public void delete(Estacion e){
+
+
+    public Estacion edit(Estacion e){
+
+        return save(e);
+    }
+
+    public ResponseEntity<?> delete(Estacion e){
+
         repository.delete(e);
+       return ResponseEntity.noContent().build();
+
+
     }
 
     public List<Estacion> saveAll(List<Estacion> list){

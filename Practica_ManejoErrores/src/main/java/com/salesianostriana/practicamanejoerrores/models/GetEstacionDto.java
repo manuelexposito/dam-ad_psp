@@ -1,5 +1,6 @@
 package com.salesianostriana.practicamanejoerrores.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
@@ -13,6 +14,5 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class GetEstacionDto extends EstacionDto{
 
-    private LocalDateTime fechaApertura;
 
 }

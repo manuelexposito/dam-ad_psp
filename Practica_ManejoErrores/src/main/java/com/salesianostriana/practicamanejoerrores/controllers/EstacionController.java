@@ -6,8 +6,10 @@ import com.salesianostriana.practicamanejoerrores.models.EstacionDtoConverter;
 import com.salesianostriana.practicamanejoerrores.models.GetEstacionDto;
 import com.salesianostriana.practicamanejoerrores.services.EstacionService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -21,31 +23,52 @@ public class EstacionController {
     private final EstacionDtoConverter dtoConverter;
 
     @GetMapping("/")
-    private List<GetEstacionDto> findAll(){
+    public List<GetEstacionDto> findAll(){
 
-        List<Object> o = estacionService.findAll();
+         List<Estacion> o = estacionService.findAll();
          return o.stream().map(dtoConverter::convertToDto).collect(Collectors.toList());
 
     }
 
     @GetMapping("/{id}")
-    private GetEstacionDto findOne(@PathVariable Long id){
+    public GetEstacionDto findOne(@PathVariable Long id){
 
-        Optional<Estacion> estacion = estacionService.findById(id);
-
-        return estacion != null ? dtoConverter.convertToDto(estacion.get()) : null;
+       // Optional<Estacion> estacion = estacionService.findById(id);
+        Estacion estacion = estacionService.findById(id);
+        return dtoConverter.convertToDto(estacion);
 
     }
 
     @PostMapping("/")
-    private GetEstacionDto createEstacion(@RequestBody CreateEstacionDto dto){
+    public GetEstacionDto createEstacion(@Valid  @RequestBody CreateEstacionDto dto){
 
-        Object nuevaEstacion = estacionService.save(dto, dtoConverter);
+        Estacion nuevaEstacion = estacionService.save(dto, dtoConverter);
 
         return dtoConverter.convertToDto(nuevaEstacion);
 
     }
 
+
+    @PutMapping("/{id}")
+    public GetEstacionDto editEstacion(@Valid @RequestBody CreateEstacionDto dto, @PathVariable Long id){
+
+        Estacion e = estacionService.findById(id);
+        Estacion editada = estacionService.edit(e, dto);
+
+
+        return dtoConverter.convertToDto(e);
+
+    }
+
+
+
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteEstacion(@PathVariable Long id){
+
+        Estacion estacion = estacionService.findById(id);
+        return estacionService.delete(estacion);
+    }
 
 
 }

@@ -1,18 +1,18 @@
-package com.salesianostriana.practicamanejoerrores.errors;
+package com.salesianostriana.practicamanejoerrores.errors.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
-import net.bytebuddy.implementation.bind.annotation.Super;
 import org.springframework.http.HttpStatus;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@SuperBuilder
+@Builder
 public class ApiError {
 
     private HttpStatus estado;
@@ -24,5 +24,5 @@ public class ApiError {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm:ss")
     private LocalDateTime fecha = LocalDateTime.now();
 
-    //private List<>
+    private List<ApiSubError> apiSubErrors;
 }

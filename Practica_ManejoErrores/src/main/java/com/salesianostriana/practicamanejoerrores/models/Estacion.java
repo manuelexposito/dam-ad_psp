@@ -24,28 +24,13 @@ public class Estacion {
     @GeneratedValue
     private Long id;
 
-    @NotNull @NotEmpty
-    private String nombre;
-
-    @NotEmpty
-    private String marca;
-
-    @NotNull
-    private String ubicacion;
-
-    @Builder.Default
-    private boolean tieneAutolavado = false;
-
-    @NotNull
-    private double precioGasoilNormal, precioGasolina95Octanos;
-
-    private double precioGasoilEspecial, precioGasolina98;
+    private String nombre, marca, ubicacion;
+    private boolean tieneAutolavado;
+    private double  precioGasoilNormal, precioGasolina95Octanos, precioGasoilEspecial, precioGasolina98;
 
     @Lob
     private String servicios;
 
-    //TODO: Fecha del pasado. Ver anotaciones de validacion.
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm:ss")
     private LocalDateTime fechaApertura;
 
 
