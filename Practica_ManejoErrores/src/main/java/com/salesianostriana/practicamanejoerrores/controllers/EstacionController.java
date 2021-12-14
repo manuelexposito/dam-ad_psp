@@ -6,10 +6,13 @@ import com.salesianostriana.practicamanejoerrores.models.EstacionDtoConverter;
 import com.salesianostriana.practicamanejoerrores.models.GetEstacionDto;
 import com.salesianostriana.practicamanejoerrores.services.EstacionService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import javax.validation.constraints.Min;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -17,6 +20,7 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/estacion")
 @RequiredArgsConstructor
+@Validated
 public class EstacionController {
 
     private final EstacionService estacionService;
@@ -31,7 +35,7 @@ public class EstacionController {
     }
 
     @GetMapping("/{id}")
-    public GetEstacionDto findOne(@PathVariable Long id){
+    public GetEstacionDto findOne(@PathVariable @Min(value = 1, message = "{param.min.id}") Long id){
 
        // Optional<Estacion> estacion = estacionService.findById(id);
         Estacion estacion = estacionService.findById(id);
@@ -40,11 +44,11 @@ public class EstacionController {
     }
 
     @PostMapping("/")
-    public GetEstacionDto createEstacion(@Valid  @RequestBody CreateEstacionDto dto){
+    public ResponseEntity<GetEstacionDto> createEstacion(@Valid  @RequestBody CreateEstacionDto dto){
 
         Estacion nuevaEstacion = estacionService.save(dto, dtoConverter);
 
-        return dtoConverter.convertToDto(nuevaEstacion);
+        return ResponseEntity.status(HttpStatus.CREATED).body(dtoConverter.convertToDto(nuevaEstacion));
 
     }
 
@@ -66,8 +70,9 @@ public class EstacionController {
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteEstacion(@PathVariable Long id){
 
-        Estacion estacion = estacionService.findById(id);
-        return estacionService.delete(estacion);
+        estacionService.delete(estacionService.findById(id));
+
+        return ResponseEntity.noContent().build();
     }
 
 

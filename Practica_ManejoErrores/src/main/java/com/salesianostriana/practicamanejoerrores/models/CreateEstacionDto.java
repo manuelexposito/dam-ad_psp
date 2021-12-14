@@ -12,7 +12,6 @@ import java.time.LocalDateTime;
 @SuperBuilder
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 public class CreateEstacionDto extends EstacionDto{
 

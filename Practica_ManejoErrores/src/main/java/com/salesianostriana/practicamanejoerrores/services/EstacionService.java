@@ -50,8 +50,7 @@ public class EstacionService {
         return repository.save(e);
     }
 
-    //TODO : DUDA - No sé si se puede devolver por aquí el 201 CREATED o por donde sería
-    //porque con DELETE no funciona de volver el ResponseEntity
+
     public Estacion save(CreateEstacionDto dto, EstacionDtoConverter converter){
 
         return repository.save((Estacion) converter.convertToEstacion(dto));
@@ -80,10 +79,9 @@ public class EstacionService {
         return save(e);
     }
 
-    public ResponseEntity<?> delete(Estacion e){
+    public void delete(Estacion e){
 
-        repository.delete(e);
-       return ResponseEntity.noContent().build();
+       repository.delete(e);
 
 
     }

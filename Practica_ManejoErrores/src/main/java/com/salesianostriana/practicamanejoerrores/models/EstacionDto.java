@@ -1,6 +1,7 @@
 package com.salesianostriana.practicamanejoerrores.models;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.salesianostriana.practicamanejoerrores.errors.customvalidators.UniqueName;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
@@ -16,34 +17,35 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
-public class EstacionDto {
+public abstract class EstacionDto {
 
     @NotNull(message = "{estacion.nombre.notnull}")
     @NotEmpty(message = "{estacion.nombre.notempty}")
-    private String nombre;
+    @UniqueName(message = "{estacion.nombre.uniquename}")
+    protected String nombre;
 
 
-    private String marca;
+    protected String marca;
 
     @NotNull(message = "{estacion.ubicacion.notnull}")
-    private String ubicacion;
+    protected String ubicacion;
 
     @Builder.Default
-    private boolean tieneAutolavado = false;
+    protected boolean tieneAutolavado = false;
 
     @NotNull(message = "{estacion.precio.notnull}")
     @Min(value = 0, message = "{estacion.precio.min}")
-    private double precioGasoilNormal, precioGasolina95Octanos;
+    protected double precioGasoilNormal, precioGasolina95Octanos;
     @Min(value = 0, message = "{estacion.precio.min}")
-    private double precioGasoilEspecial, precioGasolina98;
+    protected double precioGasoilEspecial, precioGasolina98;
 
     @Lob
-    private String servicios;
+    protected String servicios;
 
     @PastOrPresent(message = "{estacion.fecha}")
     @Builder.Default
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm:ss")
-    private LocalDateTime fechaApertura = LocalDateTime.now();
+    protected LocalDateTime fechaApertura = LocalDateTime.now();
 
 
 }
