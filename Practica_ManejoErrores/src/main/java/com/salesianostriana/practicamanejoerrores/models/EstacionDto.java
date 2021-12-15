@@ -1,6 +1,7 @@
 package com.salesianostriana.practicamanejoerrores.models;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.salesianostriana.practicamanejoerrores.errors.customvalidators.LatLong;
 import com.salesianostriana.practicamanejoerrores.errors.customvalidators.UniqueName;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
@@ -28,6 +29,7 @@ public abstract class EstacionDto {
     protected String marca;
 
     @NotNull(message = "{estacion.ubicacion.notnull}")
+    @LatLong(message = "La ubicación no es correcta")
     protected String ubicacion;
 
     @Builder.Default
@@ -43,9 +45,13 @@ public abstract class EstacionDto {
     protected String servicios;
 
     @PastOrPresent(message = "{estacion.fecha}")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm:ss")
+    protected LocalDateTime fechaApertura;
+
+
     @Builder.Default
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm:ss")
-    protected LocalDateTime fechaApertura = LocalDateTime.now();
+    protected LocalDateTime fechaRegistro = LocalDateTime.now() ;
 
 
 }

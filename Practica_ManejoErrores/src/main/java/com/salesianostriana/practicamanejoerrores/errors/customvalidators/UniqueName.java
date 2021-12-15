@@ -1,6 +1,6 @@
 package com.salesianostriana.practicamanejoerrores.errors.customvalidators;
 
-import com.salesianostriana.practicamanejoerrores.errors.model.UniqueNameValidator;
+import com.salesianostriana.practicamanejoerrores.errors.customvalidators.validators.UniqueNameValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

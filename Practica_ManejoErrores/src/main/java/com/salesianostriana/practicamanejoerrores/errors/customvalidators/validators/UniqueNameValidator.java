@@ -1,4 +1,4 @@
-package com.salesianostriana.practicamanejoerrores.errors.model;
+package com.salesianostriana.practicamanejoerrores.errors.customvalidators.validators;
 
 import com.salesianostriana.practicamanejoerrores.errors.customvalidators.UniqueName;
 import com.salesianostriana.practicamanejoerrores.repositories.EstacionRepository;

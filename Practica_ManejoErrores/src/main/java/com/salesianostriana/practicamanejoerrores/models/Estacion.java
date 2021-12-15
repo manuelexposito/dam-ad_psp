@@ -33,6 +33,7 @@ public class Estacion {
 
     private LocalDateTime fechaApertura;
 
+    private LocalDateTime fechaRegistro;
 
 
 
