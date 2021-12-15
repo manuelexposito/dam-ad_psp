@@ -1,0 +1,264 @@
+{
+	"info": {
+		"_postman_id": "c86ddd32-d7b2-487c-8bad-ba2c9b26aabf",
+		"name": "Practica-ManejoErrores",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Excepciones",
+			"item": [
+				{
+					"name": "Mala url",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/dsfsdfes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"dsfsdfes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Errores en la creacion",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": null,\r\n        \"marca\": \"\",\r\n        \"ubicacion\": \"giu389904\",\r\n        \"tieneAutolavado\": true,\r\n        \"precioGasoilNormal\": -8,\r\n        \"precioGasolina95Octanos\": -2,\r\n        \"precioGasoilEspecial\": -0.1,\r\n        \"precioGasolina98\": 1.2212,\r\n        \"servicios\": \"Los servicios de la nueva gasolinera\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/estacion/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"estacion",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mal edit",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": null,\r\n    \"marca\": null,\r\n    \"ubicacion\": \"fjdosff\",\r\n    \"tieneAutolavado\": false,\r\n    \"precioGasoilNormal\": 2.00,\r\n    \"precioGasolina95Octanos\": 2.00,\r\n    \"precioGasoilEspecial\": 2.00,\r\n    \"precioGasolina98\": 2.00,\r\n    \"servicios\": null,\r\n    \"fechaApertura\": \"22/12/2056 11:25:00\",\r\n    \"fechaRegistro\": \"22/12/2011 11:25:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/estacion/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"estacion",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Error en las fechas",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"awfewfda\",\r\n    \"marca\": \"Shell\",\r\n    \"ubicacion\": \"19.316327, 34.628906\",\r\n    \"tieneAutolavado\": true,\r\n    \"precioGasoilNormal\": 1.333,\r\n    \"precioGasolina95Octanos\": 1.432,\r\n    \"precioGasoilEspecial\": 1.23,\r\n    \"precioGasolina98\": 1.2212,\r\n    \"servicios\": \"Los servicios de la nueva gasolinera\",\r\n    \"fechaApertura\": \"22/12/2010 11:25:00\",\r\n    \"fechaRegistro\": \"2/3/2004 11:25:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/estacion/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"estacion",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get Estaciones",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/estacion/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"estacion",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Una Estacion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/estacion/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"estacion",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Estacion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Nueva Gasolinera\",\r\n    \"marca\": \"Shell\",\r\n    \"ubicacion\": \"19.316327, 34.628906\",\r\n    \"tieneAutolavado\": true,\r\n    \"precioGasoilNormal\": 1.333,\r\n    \"precioGasolina95Octanos\": 1.432,\r\n    \"precioGasoilEspecial\": 1.23,\r\n    \"precioGasolina98\": 1.2212,\r\n    \"servicios\": \"Los servicios de la nueva gasolinera\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/estacion/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"estacion",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit estacion",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Gasolinera 539534\",\r\n    \"marca\": \"Esso\",\r\n    \"ubicacion\": \"19.316327, 34.628906\",\r\n    \"tieneAutolavado\": false,\r\n    \"precioGasoilNormal\": 2.00,\r\n    \"precioGasolina95Octanos\": 2.00,\r\n    \"precioGasoilEspecial\": 2.00,\r\n    \"precioGasolina98\": 2.00,\r\n    \"servicios\": \"Servicios de calidad\",\r\n    \"fechaApertura\": \"20/04/2014 11:25:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/estacion/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"estacion",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar estacion",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/estacion/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"estacion",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL_BASE",
+			"value": "http://localhost:8080"
+		}
+	]
+}

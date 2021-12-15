@@ -6,6 +6,7 @@ import org.springframework.beans.PropertyAccessorFactory;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.Temporal;
 import java.util.Date;
@@ -26,13 +27,17 @@ public class ComparateDatesValidator implements ConstraintValidator<ComparateDat
 
     @Override
     public boolean isValid(Object value, ConstraintValidatorContext constraintValidatorContext) {
-
+    /*
         Temporal dateOne = (Temporal) PropertyAccessorFactory.forBeanPropertyAccess(value).getPropertyValue(firstDate);
         Temporal dateTwo = (Temporal) PropertyAccessorFactory.forBeanPropertyAccess(value).getPropertyValue(secondDate);
         ChronoUnit amountOfTime = ChronoUnit.NANOS;
 
         long comparation = amountOfTime.between(dateOne, dateTwo);
+*/
+        LocalDateTime dateOne = (LocalDateTime) PropertyAccessorFactory.forBeanPropertyAccess(value).getPropertyValue(firstDate);
+        LocalDateTime dateTwo = (LocalDateTime) PropertyAccessorFactory.forBeanPropertyAccess(value).getPropertyValue(secondDate);
 
-        return comparation <= 0 ? true : false;
+
+        return dateOne.isBefore(dateTwo);
     }
 }

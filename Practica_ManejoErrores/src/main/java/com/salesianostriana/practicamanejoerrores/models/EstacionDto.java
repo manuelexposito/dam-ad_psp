@@ -19,7 +19,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
-@ComparateDates(firstDate = "fechaApertura", secondDate = "fechaRegistro", message = "a")
+@ComparateDates(firstDate = "fechaApertura", secondDate = "fechaRegistro", message = "{estacion.fechas.comparacion}")
 public abstract class EstacionDto {
 
     @NotNull(message = "{estacion.nombre.notnull}")
