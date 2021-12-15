@@ -9,6 +9,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.time.temporal.ChronoUnit;
+import java.time.temporal.Temporal;
+import java.util.concurrent.TimeUnit;
 
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
@@ -21,9 +23,9 @@ public @interface ComparateDates {
 
     Class<? extends Payload>[] payload() default {};
 
-    ChronoUnit firstDate();
+    String firstDate();
 
-    ChronoUnit secondDate();
+    String secondDate();
 
     @Target({ElementType.TYPE, ElementType.FIELD})
     @Retention(RetentionPolicy.RUNTIME)

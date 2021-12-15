@@ -1,8 +1,9 @@
 package com.salesianostriana.practicamanejoerrores.models;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.salesianostriana.practicamanejoerrores.errors.customvalidators.ComparateDates;
 import com.salesianostriana.practicamanejoerrores.errors.customvalidators.LatLong;
-import com.salesianostriana.practicamanejoerrores.errors.customvalidators.UniqueName;
+import com.salesianostriana.practicamanejoerrores.errors.customvalidators.Ubication;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
@@ -18,11 +19,12 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
+@ComparateDates(firstDate = "fechaApertura", secondDate = "fechaRegistro", message = "a")
 public abstract class EstacionDto {
 
     @NotNull(message = "{estacion.nombre.notnull}")
     @NotEmpty(message = "{estacion.nombre.notempty}")
-    @UniqueName(message = "{estacion.nombre.uniquename}")
+
     protected String nombre;
 
 
@@ -30,6 +32,7 @@ public abstract class EstacionDto {
 
     @NotNull(message = "{estacion.ubicacion.notnull}")
     @LatLong(message = "La ubicación no es correcta")
+    @Ubication(message = "{estacion.nombre.ubicacion}")
     protected String ubicacion;
 
     @Builder.Default

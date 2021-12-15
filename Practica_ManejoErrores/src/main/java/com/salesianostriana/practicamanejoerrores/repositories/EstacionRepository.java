@@ -7,7 +7,7 @@ import java.util.UUID;
 
 public interface EstacionRepository extends JpaRepository<Estacion, Long> {
 
-    //Consulta para el UniqueNameValidator, comprueba is el nombre de esa estacion ya existe
-    boolean existsByNombre(String nombre);
+    //Consulta para el UbicationValidator, comprueba is el nombre de esa estacion ya existe
+    boolean existsByUbicacion(String ubicacion);
 
 }

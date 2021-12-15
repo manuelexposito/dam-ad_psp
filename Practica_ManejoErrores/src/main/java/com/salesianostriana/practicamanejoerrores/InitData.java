@@ -31,6 +31,7 @@ public class InitData {
                         .tieneAutolavado(true)
                         .ubicacion("19.316327, 34.628906")
                         .fechaApertura(LocalDateTime.of(2008, 04, 20, 11, 25))
+                        .fechaRegistro(LocalDateTime.of(2010, 05, 12, 11, 30))
                         .build(),
 
                 Estacion.builder()
@@ -43,11 +44,15 @@ public class InitData {
                         .servicios("Pocos servicios")
                         .ubicacion("51.597548, 28.947914")
                         .fechaApertura(LocalDateTime.of(2005, 02, 12, 10, 00))
+                        .fechaRegistro(LocalDateTime.of(2010, 05, 12, 13, 30))
                         .build()
 
         );
 
         estacionService.saveAll(list);
+
+
+
 
     }
 
