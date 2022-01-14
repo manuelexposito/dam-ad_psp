@@ -31,7 +31,7 @@ public class CreateUsuarioDtoV2 {
     @Email
     private String verifyEmail;
     @NotEmpty
-    @StrongPassword(min = 4, max = 10, hasUpper = true, hasOther = true)
+    @StrongPassword(min = 4, max = 10, hasUpper = true, hasOther = true, hasNumber = true, hasLower = true)
     private String password;
     private String verifyPassword;
 

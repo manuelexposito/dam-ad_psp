@@ -63,8 +63,15 @@ public class StrongPasswordValidator implements ConstraintValidator<StrongPasswo
         else if(hasOther){
             validadores.add(checkOther(password));
         }
-
-        System.out.printf("%s", validadores.stream().allMatch(b -> true));
+        System.out.printf("Tiene mayusculas: %s \n", checkUppercase(password));
+        System.out.printf("Tiene minusculas: %s \n", checkLowercase(password));
+        System.out.printf("Contraseña mayor: %s \n", password.length() >= min);
+        System.out.printf("Contraseña menor: %s \n", password.length() <= max);
+        System.out.printf("Tiene números: %s \n", checkNumbers(password));
+        System.out.printf("Tiene letras: %s \n", checkAlpha(password));
+        System.out.printf("Tiene caracteres especiales: %s \n", checkOther(password));
+        System.out.println("--------------------------------------------");
+        System.out.printf("Validación final --> %s", (validadores.stream().allMatch(b -> true)));
         return validadores.stream().allMatch(b -> b);
 
     }
