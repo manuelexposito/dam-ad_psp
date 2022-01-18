@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca0c82d6-cc2d-4a8f-b24e-f8a527c52432" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/salesianostriana/dam/ejerciciotesting/services/VentaServicioTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../E07_ModelosManyToMany.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ExpositoHerrera_Manuel_E08.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Practica_ManejoErrores.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/salesianostriana/dam/ejerciciotesting/services/VentaServicioTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/salesianostriana/dam/ejerciciotesting/services/VentaServicioTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +46,77 @@
       <recent name="com.salesianostriana.dam.ejerciciotesting.services" />
     </key>
   </component>
+  <component name="RunManager" selected="JUnit.VentaServicioTest.removeLineaVenta">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.salesianostriana.dam.ejerciciotesting.App" />
+      <module name="EjercicioMockito" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.salesianostriana.dam.ejerciciotesting.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VentaServicioTest.addProductoToVentaNotNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EjercicioMockito" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.salesianostriana.dam.ejerciciotesting.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.salesianostriana.dam.ejerciciotesting.services" />
+      <option name="MAIN_CLASS_NAME" value="com.salesianostriana.dam.ejerciciotesting.services.VentaServicioTest" />
+      <option name="METHOD_NAME" value="addProductoToVentaNotNull" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VentaServicioTest.realizarNuevaVenta" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EjercicioMockito" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.salesianostriana.dam.ejerciciotesting.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.salesianostriana.dam.ejerciciotesting.services" />
+      <option name="MAIN_CLASS_NAME" value="com.salesianostriana.dam.ejerciciotesting.services.VentaServicioTest" />
+      <option name="METHOD_NAME" value="realizarNuevaVenta" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VentaServicioTest.removeLineaVenta" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EjercicioMockito" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.salesianostriana.dam.ejerciciotesting.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.salesianostriana.dam.ejerciciotesting.services" />
+      <option name="MAIN_CLASS_NAME" value="com.salesianostriana.dam.ejerciciotesting.services.VentaServicioTest" />
+      <option name="METHOD_NAME" value="removeLineaVenta" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.VentaServicioTest.removeLineaVenta" />
+        <item itemvalue="JUnit.VentaServicioTest.addProductoToVentaNotNull" />
+        <item itemvalue="JUnit.VentaServicioTest.realizarNuevaVenta" />
+        <item itemvalue="Application.App" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -70,5 +138,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
