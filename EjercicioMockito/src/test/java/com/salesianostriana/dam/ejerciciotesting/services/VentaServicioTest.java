@@ -66,8 +66,8 @@ class VentaServicioTest {
                 .fecha(LocalDate.now())
                 .lineasDeVenta(List.of(new LineaDeVenta(p, productosMap.get(p.getCodigoProducto()), p.getPrecio()))).build();
 
-        lenient().when(productoRepositorio.findOne(p.getCodigoProducto())).thenReturn(p);
-        lenient().when(ventaRepositorio.save(v)).thenReturn(v);
+        when(productoRepositorio.findOne(p.getCodigoProducto())).thenReturn(p);
+        when(ventaRepositorio.save(v)).thenReturn(v);
         assertEquals(v, servicio.nuevaVenta(productosMap, c));
 
     }
